@@ -58,6 +58,7 @@ do
     }
     //Create exit
     else if (x==3){
+        printf("Thank you for playing!\n");
         exit(0);
     }
 }while(x != 'q');
