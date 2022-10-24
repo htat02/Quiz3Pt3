@@ -11,8 +11,6 @@ do
     int randTargetNum;
     int guess;
 
-    srand(time(NULL));
-    randTargetNum = (rand() % maxNum) + 1;
 //Create interactive menu
     printf("Welcome to the number guessing game\n");
     printf("Press 1 to play a game\nPress 2 to change the max number\nPress 3 to quit\n");
@@ -21,7 +19,8 @@ do
     if (x == 1)
     {
     printf("Enter a number from 1 - %d to guess\n", maxNum);
-    
+    srand(time(NULL));
+    randTargetNum = (rand() % maxNum) + 1;
         do{    
 
             scanf("%d", &guess);
@@ -37,9 +36,12 @@ do
 }
 //Create max number change
     else if (x == 2)
+    
     {
     printf("Enter a number to change the max guessable number\n");
     scanf("%d",&maxNum);
+    srand(time(NULL));
+    randTargetNum = (rand() % maxNum) + 1;
     printf("Enter a number from 1 - %d to guess\n", maxNum);
     
         do{    
