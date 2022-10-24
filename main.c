@@ -2,12 +2,11 @@
 #include <time.h>
 #include <stdlib.h>
 
-char inp;
+int x;
 int main(){
     
 do
 {
-    int x;
     int maxNum =10;
     int randTargetNum;
     int guess;
@@ -39,11 +38,25 @@ do
 //Create max number change
     else if (x == 2)
     {
-    printf("Test");
+    printf("Enter a number to change the max guessable number\n");
+    scanf("%d",&maxNum);
+    printf("Enter a number from 1 - %d to guess\n", maxNum);
+    
+        do{    
+            scanf("%d", &guess);
+                if(guess > randTargetNum){
+                    printf("You guessed too high. Please try again!\n");
+                }
+                if(guess < randTargetNum){
+                    printf("You guessed too low. Please try again!\n");
+                }
+
+        }while(guess != randTargetNum);
+        printf("You have guessed correctly!\n");
     }
     //Create exit
     else if (x==3){
         exit(0);
     }
-}while(inp != 'q');
+}while(x != 'q');
 }
